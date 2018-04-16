@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <p>Skittles</p>
+  <p>Fear</p>
+  <p>Anger</p>
+
+  <script>
+  var paragraphs = document.body.getElementsByTagName('p');
+  document.body.insertBefore(paragraphs[2], paragraphs[0]);
+
+
+  //document.body.innerHTML = "<p> Well that was usefull</p>";
+
+  /*
+  var newPara = document.createTextNode("A Jedi craves not these things");
+  document.body.appendChild(newPara);
+  */
+  var newPara = document.createElement("p");
+  var text = document.createTextNode("A Jedi craves not these things");
+  newPara.appendChild (text);
+  document.body.appendChild(newPara);
+
+/*replacing elements (Skittles by Aggretion)*/
+  var newPara2 =document.createElement("p");
+  var text2 = document.createTextNode("Aggretion");
+  newPara2.appendChild (text2);
+  document.body.replaceChild(newPara2, paragraphs[1]);
+
+  </script>
+</body>
+</html>
