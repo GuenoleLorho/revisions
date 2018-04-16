@@ -1,0 +1,28 @@
+body {
+  margins:auto;
+  width: 80%;
+  background-color: green;
+}
+
+header, section, article, nav, aside, footer, div{
+  font-family: sans-serif;
+  border: 1px dotted #000;
+  padding: 10px;
+  margin: 10px;
+}
+/*css using class*/
+.warning{font-weight:bold;}
+.blogPost{background-color: lightBlue;}
+
+/*css using id*/
+#fisrt-para{font-weight: bold;}
+#PageContent{border: 1px dashed red;}
+
+/*navigation bar with flex box*/
+.flex-container{
+  border: 2px dashed blue;
+  display: webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
