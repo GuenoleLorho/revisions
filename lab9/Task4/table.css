@@ -1,0 +1,6 @@
+.highlighted {
+    border: red solid 2px;
+}
+.nonhighlighted {
+    border: red hidden 2px;
+}
