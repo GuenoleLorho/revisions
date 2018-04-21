@@ -3,4 +3,4 @@
 //use.
 export.myDateTime = function(){
   return Date();
-}
+};
