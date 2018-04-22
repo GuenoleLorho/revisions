@@ -22,6 +22,31 @@ app.get('/add', function(req,res){
   y = parseInt(y);
   res.send("X+Y="+(x+y));
 });
+//route 5 calc
+app.get('/calc', function(req,res){
+  var x = req.query.x;
+  x = parseInt(x);
+  var y = req.query.y;
+  y = parseInt(y);
+  var op = req.query.op;
+  if(op = add){
+    res.send("X+Y="+(x+y));
+  }else {
+    if(op = sub){
+      res.send("X+Y="+(x-y));
+    }else {
+      if(op = mul){
+        res.send("X+Y="+(x*y));
+      }else {
+        if(op = div){
+          res.send("X+Y="+(x/y));
+        }else {
 
+        }
+      }
+    }
+  }
+
+});
 
 app.listen(8080);
