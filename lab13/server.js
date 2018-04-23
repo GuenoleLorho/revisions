@@ -44,7 +44,7 @@ app.get('/calc', function(req,res){
         if(op === "div"){
           res.send("X+Y="+(x/y));
         }else {
-
+          res.send("doesn't work man");
         }
       }
     }
