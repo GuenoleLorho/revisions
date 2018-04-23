@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public')) 
+app.use(express.static('public'))
 //route1
 app.get('/', function(req, res){
   res.send("hello world! by express");
@@ -52,6 +52,13 @@ app.get('/calc', function(req,res){
     }
   }
 
+});
+
+//quest Form
+app.get('/getform', function(req, res){
+var name = req.query.name;
+var quest = req.query.quest;
+ res.send("Hi "+name+" I am sure you will "+quest) ;
 });
 
 app.listen(8080);
