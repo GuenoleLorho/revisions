@@ -31,6 +31,7 @@ app.get('/calc', function(req,res){
   var op = req.query.op;
   var id = req.query.id;
   console.log("x="+ x+"  y="+y+"  op="+op+"  id="+id);
+  res.send("x="+ x+"  y="+y+"  op="+op+"  id="+id);
   if(op = "add"){
     res.send("X+Y="+(x+y));
   }else {
