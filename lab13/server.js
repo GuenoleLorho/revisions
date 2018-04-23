@@ -32,16 +32,16 @@ app.get('/calc', function(req,res){
   var id = req.query.url;
   //console.log("x="+ x+"  y="+y+"  op="+op+"  id="+id);
   //res.send("x="+ x+"  y="+y+"  op="+op+"  id="+id);
-  if(op = "add"){
+  if(op == "add"){
     res.send("X+Y="+(x+y));
   }else {
-    if(op = "sub"){
+    if(op == "sub"){
       res.send("X+Y="+(x-y));
     }else {
-      if(op = "mul"){
+      if(op == "mul"){
         res.send("X+Y="+(x*y));
       }else {
-        if(op = "div"){
+        if(op == "div"){
           res.send("X+Y="+(x/y));
         }else {
 
