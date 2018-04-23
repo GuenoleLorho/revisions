@@ -29,7 +29,7 @@ app.get('/calc', function(req,res){
   var y = req.query.y;
   y = parseInt(y);
   var op = req.query.op;
-  var id = req.query.id;
+  var id = req.query.url;
   console.log("x="+ x+"  y="+y+"  op="+op+"  id="+id);
   res.send("x="+ x+"  y="+y+"  op="+op+"  id="+id);
   if(op = "add"){
