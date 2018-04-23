@@ -1,6 +1,7 @@
 var express = require('express');
-app.use(express.static('public')) 
 var app = express();
+
+app.use(express.static('public')) 
 //route1
 app.get('/', function(req, res){
   res.send("hello world! by express");
