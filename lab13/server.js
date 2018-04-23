@@ -36,13 +36,13 @@ app.get('/calc', function(req,res){
     res.send("X+Y="+(x+y));
   }else {
     if(op === "sub"){
-      res.send("X+Y="+(x-y));
+      res.send("X-Y="+(x-y));
     }else {
       if(op === "mul"){
-        res.send("X+Y="+(x*y));
+        res.send("X*Y="+(x*y));
       }else {
         if(op === "div"){
-          res.send("X+Y="+(x/y));
+          res.send("X/Y="+(x/y));
         }else {
           res.send("doesn't work man");
         }
