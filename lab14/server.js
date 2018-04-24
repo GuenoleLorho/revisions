@@ -9,7 +9,7 @@ var client = new Twitter({
   access_token_secret: 'xxxxxxxx'
 })
 
-app.use(express.static('public'))
+
 
 var params = {screen_name: 'node.js'};
 client.get('statues/user_timeline', params, function(error, tweets, respond){
@@ -18,7 +18,10 @@ client.get('statues/user_timeline', params, function(error, tweets, respond){
   }
 });
 
+
+app.use(express.static('public'))
 app.get('/', function(req, res){
+  res.end(Twitter);
   res.send("Hello world! by express");
 });
 
