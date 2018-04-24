@@ -16,8 +16,8 @@ app.get('/', function(req, res){
     screen_name: 'node.js'
   };
 
-  client.get('statues/user_timeline', params, function(error, tweets, respond){
-    if(!error){
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+    if (!error) {
       console.log(tweets);
     }
   });
