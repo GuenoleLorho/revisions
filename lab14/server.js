@@ -3,8 +3,8 @@ var app =express();
 
 var Twitter = require('twitter');
 var client = new Twitter({
-  consumer_key: 'G8ciHP2LBIsMCGQOFnsXBgAEU',
-  consumer_secret: 'oGkdRsdv3mJzsBQX9Da3Q3n76sLTVN8WB2oQ67JmKRzjtkgNg3',
+  consumer_key: 'ovytMEBOVa7vgTPGkXjo2Zqzy',
+  consumer_secret: 'UIXD2rBiFvGEiqYCW1Gv1JgcQikOMLpfTwC2NHx5DbwaJhvRJX',
   access_token_key: '988554737120432128-ekr9I8PrMWzWYuzSVOKH4xztT2kqxSR',
   access_token_secret: 'mkrYHaXlJ7MXhUZNB5fAkbjOEzvHxWZk33UbYM1oSG27A'
 });
