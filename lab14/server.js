@@ -11,17 +11,17 @@ var client = new Twitter({
 
 
 
-var params = {screen_name: 'node.js'};
-client.get('statues/user_timeline', params, function(error, tweets, respond){
-  if(!error){
-    console.log(tweets);
-  }
-});
+
 
 
 app.use(express.static('public'))
 app.get('/', function(req, res){
-  res.end(Twitter);
+  var params = {screen_name: 'node.js'};
+  client.get('statues/user_timeline', params, function(error, tweets, respond){
+    if(!error){
+      console.log(tweets);
+    }
+  });
   res.send("Hello world! by express");
 });
 
