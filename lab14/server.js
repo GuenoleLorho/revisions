@@ -7,11 +7,7 @@ var client = new Twitter({
   consumer_secret: 'oGkdRsdv3mJzsBQX9Da3Q3n76sLTVN8WB2oQ67JmKRzjtkgNg3',
   access_token_key: '988554737120432128-ekr9I8PrMWzWYuzSVOKH4xztT2kqxSR',
   access_token_secret: 'mkrYHaXlJ7MXhUZNB5fAkbjOEzvHxWZk33UbYM1oSG27A'
-})
-
-
-
-
+});
 
 
 app.use(express.static('public'))
