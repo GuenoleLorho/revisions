@@ -3,10 +3,10 @@ var app = express();
 var Twitter = require('twitter');
 
 var client = new Twitter({
-  consumer_key: 'vPuzIzncL5b5HyyUMp99kbMwv',
-  consumer_secret: 'yKbWuC6TupPNzIJP0NnNXVxLn1D8BDprijakencUG3bAGMize5',
-  access_token_key: '14812487-PNs6GC8wpgeAG2W7szRt4ZvpTA7lYBes6mORd9KDT',
-  access_token_secret: 'Tjy5TrQ5c5YVLA6q2cb7LeoDty7bHIg0HmbDELgMwMCHG'
+  consumer_key: 'ovytMEBOVa7vgTPGkXjo2Zqzyv',
+  consumer_secret: 'UIXD2rBiFvGEiqYCW1Gv1JgcQikOMLpfTwC2NHx5DbwaJhvRJX',
+  access_token_key: '988554737120432128-ekr9I8PrMWzWYuzSVOKH4xztT2kqxSR',
+  access_token_secret: 'mkrYHaXlJ7MXhUZNB5fAkbjOEzvHxWZk33UbYM1oSG27A'
 });
 
 
