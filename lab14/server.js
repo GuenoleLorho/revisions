@@ -16,7 +16,10 @@ var client = new Twitter({
 
 app.use(express.static('public'))
 app.get('/', function(req, res){
-  var params = {screen_name: 'node.js'};
+  var params = {
+    screen_name: 'node.js'
+  };
+
   client.get('statues/user_timeline', params, function(error, tweets, respond){
     if(!error){
       console.log(tweets);
