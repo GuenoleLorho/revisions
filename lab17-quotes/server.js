@@ -58,7 +58,7 @@ app.get('/', function(req, res) {
     if (err) throw err;
     console.log(result);
 
-    res.render('index', {
+    res.render('pages/index', {
       quotesarray : result
     });
   });
