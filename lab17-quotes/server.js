@@ -59,7 +59,8 @@ app.get('/', function(req, res) {
     console.log(result);
 
     res.render('pages/index', {
-      quotesarray : result
+      quotesarray : result,
+      output: output
     });
   });
 });
