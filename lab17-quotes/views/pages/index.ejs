@@ -16,6 +16,19 @@
 
       <h2>Quotes!</h2>
 
+      <h2>Variable</h2>
+      <p><%= output %></p>
+      <h2>Loop</h2>
+      <ul>
+        <% quotes.forEach(function(quote1){%>
+          <li>
+            <%= quote1.name %> -
+            <%= drin1k.drunkness %>
+          </li>
+        <% }); %>
+      </ul>
+
+
     </div>
   </main>
 
