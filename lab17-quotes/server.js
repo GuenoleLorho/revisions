@@ -49,10 +49,6 @@ app.get('/update', function(req,res) {
 
 
 app.get('/', function(req, res) {
-  var output = "All the quotes";
-  res.render('pages/index', {
-    output : output
-  });
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result);

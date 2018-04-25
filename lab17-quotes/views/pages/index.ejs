@@ -15,13 +15,12 @@
     <div class="jumbotron">
 
       <h2>Quotes!</h2>
-      <h2>Loop</h2>
-      <ul>
-        <% quotesarray.forEach(function(quote1){%>
-          <li>
-            <%= quote1.name %> -
-            <%= quote1.quote %>
-          </li>
+      <div>
+        <% quotesarray.forEach(function(quote){%>
+          <div>
+            <h3><%= quote.name %></h3>
+            <p><%= quote.quote %></p>
+          </div>
         <% }); %>
       </ul>
 
