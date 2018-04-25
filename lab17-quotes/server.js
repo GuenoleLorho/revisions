@@ -50,9 +50,9 @@ app.get('/update', function(req,res) {
 
 app.get('/', function(req, res) {
   var output="Test 2 working";
-  res.render('pages/index', {
+/*  res.render('pages/index', {
     output: output
-  });
+  });*/
 
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
