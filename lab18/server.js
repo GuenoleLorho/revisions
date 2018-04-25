@@ -64,6 +64,7 @@ app.get('/', function(req, res) {
     //the result of the query is sent to the users page as the "users" array
     res.render('pages/users', {
       users: result
+      userdata: result
     })
   });
 
