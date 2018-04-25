@@ -45,7 +45,7 @@ app.get('/', function(req, res) {
   var uname = req.session.username
   console.log("test1 :" +uname)
 
-  var userdata =  db.collection('people').findOne({
+  db.collection('people').findOne({
     "login.username": uname
 
 
@@ -54,7 +54,7 @@ app.get('/', function(req, res) {
       //console.log(uname+ ":" + result);
       //finally we just send the result to the user page as "user"
       res.render('pages/users', {
-        mainuser: result
+        userdata: result
       })
     });
 
