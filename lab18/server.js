@@ -47,7 +47,18 @@ app.get('/', function(req, res) {
 
   var userdata =  db.collection('people').findOne({
     "login.username": uname
-  });
+
+
+  }, function(err, result) {
+      if (err) throw err;
+      //console.log(uname+ ":" + result);
+      //finally we just send the result to the user page as "user"
+      res.render('pages/users', {
+        mainuser: result
+      })
+    });
+
+//  });
   console.log("test2 : " + userdata)
   /*, function(err, result) {
     if (err) throw err;
@@ -63,8 +74,7 @@ app.get('/', function(req, res) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
     res.render('pages/users', {
-      users: result,
-      userdata: result
+      users: result
     })
   });
 
