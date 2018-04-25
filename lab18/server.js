@@ -255,7 +255,7 @@ app.post('/update', function(req, res) {
 app.post('/doupdate', function(req, res) {
   //check we are logged in
   //we create the data string from the form components that have been passed in
-var query ={"username":req.body.username}
+var query ={"login.username":req.body.username}
 var newvalues = {$set:{
 "gender":req.body.newgender,
 "name":{"title":req.body.newtitle,"first":req.body.newfirst,"last":req.body.newlast},
@@ -270,8 +270,8 @@ var newvalues = {$set:{
 //once created we just run the data string against the database and all our new data will be saved/
   db.collection('people').updateOne(query, newvalues, function(err, result) {
     if (err) throw err;
-    console.log('updated to database')
+    console.log('updated to database');
     //when complete redirect to the index
-    res.redirect('/')
-  })
+    res.redirect('/');
+  });
 });
