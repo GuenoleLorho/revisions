@@ -42,6 +42,19 @@ MongoClient.connect(url, function(err, database) {
 app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
+  var uname = req.session.username
+
+
+  db.collection('people').findOne({
+    "login.username": uname
+  }, function(err, result) {
+    if (err) throw err;
+    //console.log(uname+ ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.render('pages/profile', {
+      user: result
+    })
+  });
 
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
@@ -114,7 +127,10 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if(result.login.password == pword){
+      req.session.loggedin = true;
+      req.session.username = uname;
+      res.redirect('/') }
     //otherwise send them back to login
     else{res.redirect('/login')}
   });
