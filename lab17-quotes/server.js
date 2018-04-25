@@ -48,12 +48,12 @@ app.get('/update', function(req,res) {
 
 
 
-app.get('/', function(req, res) {
+app.get('/Allquotes', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
 
-    res.render('pages/index', {
+    res.render('index', {
       quotesarray : result
     });
   });
