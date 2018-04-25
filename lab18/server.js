@@ -94,7 +94,7 @@ app.get('/', function(req, res) {
     //console.log(uname+ ":" + result);
     //finally we just send the result to the user page as "user"
     res.render('pages/users', {
-      user: result
+      mainuser: result
     })
   });
   console.log("string = "+string)
