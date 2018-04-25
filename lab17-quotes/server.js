@@ -50,9 +50,6 @@ app.get('/update', function(req,res) {
 
 app.get('/', function(req, res) {
   var output="Test 2 working";
-/*  res.render('pages/index', {
-    output: output
-  });*/
 
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
@@ -97,16 +94,38 @@ app.post('/search', function(req, res) {
     if (err) throw err;
 
     var output = "<h1>quotes by" +req.body.name+ "</h1>";
-
+    res.render('pages/search', {
+      quotesarray : result,
+      output : output
+    });
+    /*
     for (var i = 0; i < result.length; i++) {
       output += "<div>"
       output += "<h3>" + result[i].name + "</h3>"
       output += "<p>" + result[i].quote + "</p>"
       output += "</div>"
-    }
-    res.send(output);
+    }*/
+    //res.send(output);
   });
 });
+/*
+app.get('/', function(req, res) {
+  var output="Test 2 working";
+
+  db.collection('quotes').find().toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+
+    res.render('pages/index', {
+      quotesarray : result,
+      output: output
+    });
+  });
+});*/
+
+
+
+
 
 app.post('/delete', function(req, res) {
   db.collection('quotes').deleteOne(req.body, function(err, result) {
