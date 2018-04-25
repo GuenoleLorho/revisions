@@ -42,32 +42,10 @@ MongoClient.connect(url, function(err, database) {
 app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
-  var uname = req.session.username
-  console.log("test1 :" +uname)
 
-  db.collection('people').findOne({
-    "login.username": uname
-
-
-  }, function(err, result) {
-      if (err) throw err;
-      //console.log(uname+ ":" + result);
-      //finally we just send the result to the user page as "user"
-      res.render('pages/users', {
-        userdata: result
-      })
-    });
 
 //  });
   console.log("test2 : " + userdata)
-  /*, function(err, result) {
-    if (err) throw err;
-    //console.log(uname+ ":" + result);
-    //finally we just send the result to the user page as "user"
-    res.render('pages/profile', {
-      logged: result
-    })
-  });*/
 
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
@@ -80,6 +58,25 @@ app.get('/', function(req, res) {
 
 });
 
+
+app.get('/', function(req, res) {
+var uname = req.session.username
+console.log("test1 :" +uname)
+
+db.collection('people').findOne({
+  "login.username": uname
+
+
+}, function(err, result) {
+    if (err) throw err;
+    //console.log(uname+ ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.render('pages/users', {
+      userdata: result
+    })
+  });
+
+});
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
   res.render('pages/login');
