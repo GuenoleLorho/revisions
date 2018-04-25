@@ -94,7 +94,7 @@ app.post('/search', function(req, res) {
     if (err) throw err;
 
     var output = "<h1>quotes by" +req.body.name+ "</h1>";
-    res.send('pages/results', {
+    res.render('pages/results', {
       quotesarray : result,
       output : output
     });
