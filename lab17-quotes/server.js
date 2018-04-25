@@ -49,6 +49,11 @@ app.get('/update', function(req,res) {
 
 
 app.get('/', function(req, res) {
+  var output="Test 2 working";
+  res.render('pages/index', {
+    output: output
+  });
+  /*
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
@@ -56,8 +61,19 @@ app.get('/', function(req, res) {
     res.render('index', {
       quotesarray : result
     });
-  });
+  });*/
 });
+
+/*
+
+<!--
+<div>
+  <% quotesarray.forEach(function(quote){%>
+    <div>
+      <h3><%= quote.name %></h3>
+      <p><%= quote.quote %></p>
+    </div>
+  <% }); %>-->
 
 
 app.get('/', function(req, res){
@@ -71,7 +87,7 @@ app.get('/', function(req, res){
     drinks: drinks,
     tagline: tagline
   });
-});
+});*/
 
 
 app.post('/quotes', function (req, res) {
