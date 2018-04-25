@@ -240,13 +240,20 @@ app.post('/update', function(req, res) {
 });*/
 app.get('/update', function(req,res) {
   res.render('pages/update')
-});
+});/*
+app.post('/update', function(req, res) {
+  var query = { quote: req.body.quote };
+  var newvalues = { $set: {name: req.body.newname, quote: req.body.newquote } };
+  db.collection('quotes').updateOne(query,newvalues, function(err, result) {
+    if (err) throw err;
+    res.redirect('/');
+  });
+});*/
 
 
-app.post('/douptdate', function(req, res) {
+
+app.post('/doupdate', function(req, res) {
   //check we are logged in
-  if(!req.session.loggedin){res.redirect('/login');return;}
-
   //we create the data string from the form components that have been passed in
 var query ={"username":req.body.username}
 var newvalues = {$set:{
