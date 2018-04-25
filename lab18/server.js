@@ -86,7 +86,8 @@ app.get('/', function(req, res) {
   var uname = req.session.username;
   //this query finds the first document in the array with that username.
   //Because the username value sits in the login section of the user data we use login.username
-  db.collection('people').findOne({
+  var string ="";
+  string += db.collection('people').findOne({
     "login.username": uname
   }, function(err, result) {
     if (err) throw err;
@@ -96,6 +97,7 @@ app.get('/', function(req, res) {
       user: result
     })
   });
+  console.log("string = "+string)
 
 });
 
