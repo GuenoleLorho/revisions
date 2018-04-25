@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+  <% include ../partials/head %>
+</header>
+
+
+<body class="container">
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+  <main>
+    <div class="jumbotron">
+
+      <!-- form with entry box for each bit of inomfrtaion we want from our user. -->
+      <h3>Modify</h3>
+      <h4>
+      </h4>
+      <!-- submits to our /adduser route. -->
+      <form action="/doupdate" method="POST">
+        <input type="text" placeholder="username"     name="username">
+        <br>
+        <label>Name</label>
+        <input type="text" placeholder="title" name="newtitle">
+        <input type="text" placeholder="first" name="newfirst">
+        <input type="text" placeholder="last"  name="newlast">
+        </br><label>Login</label>
+        <input type="email" placeholder="me@example.com"    name="newemail">
+        <input type="text" placeholder="username"     name="newusername">
+        <input type="password" placeholder="password"  name="newpassword">
+        </br><label>Details</label>
+        <input type="text" placeholder="gender" name="gender">
+        <input type="datetime" placeholder="date of birth"    name="newdob">
+        <input type="text" placeholder="nationality" name="newnat">
+        </br><label>Location</label>
+        <input type="text" placeholder="street"   name="newstreet">
+        <input type="text" placeholder="city"     name="newcity">
+        <input type="text" placeholder="state"    name="newstate">
+        <input type="text" placeholder="postcode" name="newpostcode">
+        </br><label>Pictures</label>
+          <input type="text" placeholder="large"     name="newlarge">
+          <input type="text" placeholder="medium"    name="newmedium">
+          <input type="text" placeholder="thumbnail" name="newthumbnail">
+        </br><button type="submit">Submit</button>
+      </form>
+
+
+
+    </div>
+  </main>
+
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+
+</body>
+
+</html>

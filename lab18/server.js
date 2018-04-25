@@ -228,3 +228,39 @@ var datatostore = {
     res.redirect('/')
   })
 });
+
+/*
+app.post('/update', function(req, res) {
+  var query = { quote: req.body.quote };
+  var newvalues = { $set: {name: req.body.newname, quote: req.body.newquote } };
+  db.collection('quotes').updateOne(query,newvalues, function(err, result) {
+    if (err) throw err;
+    res.redirect('/');
+  });
+});*/
+
+app.post('/douptdate', function(req, res) {
+  //check we are logged in
+  if(!req.session.loggedin){res.redirect('/login');return;}
+
+  //we create the data string from the form components that have been passed in
+var query ={"username":req.body.username}
+var newvalues = {$set:{
+"gender":req.body.newgender,
+"name":{"title":req.body.newtitle,"first":req.body.newfirst,"last":req.body.newlast},
+"location":{"street":req.body.newstreet,"city":req.body.newcity,"state":req.body.newstate,"postcode":req.body.newpostcode},
+"email":req.body.newemail,
+"login":{"username":req.body.newusername,"password":req.body.newpassword},
+"dob":req.body.newdob,"registered":Date(),
+"picture":{"large":req.body.newlarge,"medium":req.body.newmedium,"thumbnail":req.body.newthumbnail},
+"nat":req.body.newnat}};
+
+
+//once created we just run the data string against the database and all our new data will be saved/
+  db.collection('people').updateOne(query, newvalues, function(err, result) {
+    if (err) throw err;
+    console.log('updated to database')
+    //when complete redirect to the index
+    res.redirect('/')
+  })
+});

@@ -98,30 +98,8 @@ app.post('/search', function(req, res) {
       quotesarray : result,
       output : output
     });
-    /*
-    for (var i = 0; i < result.length; i++) {
-      output += "<div>"
-      output += "<h3>" + result[i].name + "</h3>"
-      output += "<p>" + result[i].quote + "</p>"
-      output += "</div>"
-    }*/
-    //res.send(output);
   });
 });
-/*
-app.get('/', function(req, res) {
-  var output="Test 2 working";
-
-  db.collection('quotes').find().toArray(function(err, result) {
-    if (err) throw err;
-    console.log(result);
-
-    res.render('pages/index', {
-      quotesarray : result,
-      output: output
-    });
-  });
-});*/
 
 
 
