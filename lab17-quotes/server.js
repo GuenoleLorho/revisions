@@ -29,10 +29,10 @@ MongoClient.connect(url, function(err, database) {
 });
 
 //you need to complete these
-
+/*
 app.get('/', function(req,res) {
   res.render('pages/index')
-});
+});*/
 app.get('/add', function(req,res) {
   res.render('pages/add')
 });
