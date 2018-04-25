@@ -45,7 +45,7 @@ app.get('/', function(req, res) {
 
 
 //  });
-  console.log("test2 : " + userdata)
+  //console.log("test2 : " + userdata)
 
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
