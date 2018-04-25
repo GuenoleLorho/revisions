@@ -43,7 +43,8 @@ app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
   var uname = req.session.username
-
+  console.log("test1 :" +uname)
+/*
 
   db.collection('people').findOne({
     "login.username": uname
@@ -54,7 +55,7 @@ app.get('/', function(req, res) {
     res.render('pages/profile', {
       logged: result
     })
-  });
+  });*/
 
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
