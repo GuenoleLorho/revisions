@@ -91,8 +91,6 @@ app.get('/', function(req, res) {
   });
 
   console.log("string = "+string);*/
-  string = JSON.stringify(string);
-  console.log("string = "+string);
   db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
