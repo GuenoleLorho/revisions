@@ -52,7 +52,7 @@ app.get('/', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
-    var output = "<h1>All the quotes</h1>";
+    var output = "All the quotes";
     res.render('pages/index', {
       quotesarray : result,
       output : output
