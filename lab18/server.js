@@ -238,6 +238,10 @@ app.post('/update', function(req, res) {
     res.redirect('/');
   });
 });*/
+app.get('/update', function(req,res) {
+  res.render('pages/update')
+});
+
 
 app.post('/douptdate', function(req, res) {
   //check we are logged in
